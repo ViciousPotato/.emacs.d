@@ -17,7 +17,9 @@
 (prefer-coding-system 'utf-8)
 
 ;; theme
-(set-default-font "Monaco-10")
+(if (eq system-type 'darwin)
+	(set-default-font "Monaco-10")
+	(set-default-font "Consolas-11"))
 (setq-default line-spacing 3)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'bubbleberry t)
