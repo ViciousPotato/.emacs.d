@@ -17,7 +17,9 @@
 (prefer-coding-system 'utf-8)
 
 ;; theme
-(set-default-font "Monaco-10")
+(if (eq system-type 'darwin)
+	(set-default-font "Monaco-10")
+	(set-default-font "Consolas-11"))
 (setq-default line-spacing 3)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'bubbleberry t)
@@ -30,7 +32,7 @@
 
 ;; proxy
 (setq url-using-proxy t)
-(setq url-proxy-services  '(("http" . "proxy.fudan.edu.cn:8080")))
+(setq url-proxy-services  '(("http" . "wwwproxy.ms.com:8080")))
 
 ;; Emacs Starter Kit
 (require 'package)
