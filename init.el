@@ -45,7 +45,7 @@
 (setq stack-trace-on-error nil)
 (setq ecb-tip-of-the-day nil)
 (require 'ecb)
-(ecb-activate)
+;; (ecb-activate)
 
 ;; Language modes
 ;; Jade mode
@@ -53,6 +53,12 @@
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; Markdown mode
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
