@@ -22,7 +22,9 @@
 	(set-default-font "Consolas-11"))
 (setq-default line-spacing 3)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'bubbleberry t)
+
+(if (display-graphic-p)
+    (load-theme 'bubbleberry t))
 
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/plugins")
