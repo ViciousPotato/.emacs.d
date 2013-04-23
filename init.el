@@ -40,6 +40,9 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives 
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(unless package-archive-contents (package-refresh-contents))
 (package-initialize)
 
 
@@ -61,6 +64,9 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; Fsharp-mode
+(require 'fsharp-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

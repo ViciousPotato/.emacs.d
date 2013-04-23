@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
- markdown-mode
  package-install
  menu-bar-mode
  load-library
  set-variable
  untabify
  load-theme
+ irc
 )
 
 ;; ----- smex-data -----
 (
  (irc . 1)
- (package-install . 21)
+ (package-install . 23)
  (ecb-activate . 2)
  (set-frame-font . 1)
  (load-theme . 2)
