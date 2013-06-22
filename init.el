@@ -23,9 +23,6 @@
 (setq-default line-spacing 3)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
-(if (display-graphic-p)
-    (load-theme 'bubbleberry t))
-
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/plugins")
 ;; Needed by powerline
@@ -33,14 +30,20 @@
 (require 'powerline)
 
 ;; proxy
-(setq url-using-proxy t)
-(setq url-proxy-services  '(("http" . "wwwproxy.ms.com:8080")))
+;; (setq url-using-proxy t)
+;; (setq url-proxy-services  '(("http" . "wwwproxy.ms.com:8080")))
 ;;
 ;; Emacs Starter Kit
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+
+
+;;(require 'solarized-theme)
+;;(solarized-dark-theme)
+(if (display-graphic-p)
+    (load-theme 'bubbleberry t))
 
 
 ;; ecb
