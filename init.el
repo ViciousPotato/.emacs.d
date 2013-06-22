@@ -19,15 +19,30 @@
 ;; theme
 (if (eq system-type 'darwin)
 	(set-default-font "Monaco-10")
-	(set-default-font "Consolas-11"))
-(setq-default line-spacing 3)
+  (set-default-font "Inconsolata-10.5"))
+;;  (set-default-font "Ubuntu Mono-12"))
+;;	(set-default-font "Consolas-11"))
+(setq-default line-spacing 2)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
+;;(if (display-graphic-p)
+;;    (load-theme 'bubbleberry t))
 
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/plugins")
 ;; Needed by powerline
-(require 'cl)
-(require 'powerline)
+;;(require 'cl)
+;;(require 'powerline)
+
+;; indentation
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; line number
+(global-linum-mode 1)
+
+;; Stop backing up
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; proxy
 ;; (setq url-using-proxy t)
@@ -37,8 +52,21 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives 
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(unless package-archive-contents (package-refresh-contents))
 (package-initialize)
 
+(require 'color-theme)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
+
+;; smooth scrolling
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
+
+;; delete when typing
+(delete-selection-mode 1)
 
 ;;(require 'solarized-theme)
 ;;(solarized-dark-theme)
@@ -64,6 +92,17 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; Fsharp-mode
+(require 'fsharp-mode)
+(setq inferior-fsharp-program "\"c:\\Program Files\\Microsoft F#\\v4.0\\Fsi.exe\"")
+(setq fsharp-compiler "\"c:\\Program Files\\Microsoft F#\\v4.0\\Fsc.exe\"")
+
+;; Java stuff
+(add-hook 'java-mode-hook (lambda ()
+                            (setq c-basic-offset 2
+                                  tab-width 2
+                                  indent-tabs-mode t)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
