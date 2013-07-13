@@ -98,6 +98,10 @@
                                   tab-width 2
                                   indent-tabs-mode t)))
 
+;; Python stuff
+(add-hook 'python-mode-hook '(lambda () 
+                               (setq python-indent-offset 2))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,20 +1,20 @@
 
 ;; ----- smex-history -----
 (
+ version
  set-default-font
  paredit-mode
  auto-fill-mode
  indent-region
  package-install
- set-variable
- make-directory
+ load-library
 )
 
 ;; ----- smex-data -----
 (
  (irc . 1)
  (package-install . 30)
- (ecb-activate . 5)
+ (ecb-activate . 6)
  (set-frame-font . 1)
  (load-theme . 2)
  (untabify . 2)
@@ -42,4 +42,5 @@
  (indent-region . 2)
  (auto-fill-mode . 1)
  (paredit-mode . 1)
+ (version . 1)
 )
