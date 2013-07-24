@@ -1,24 +1,24 @@
 
 ;; ----- smex-history -----
 (
+ line-number-mode
+ load-library
+ package-install
  version
  set-default-font
  paredit-mode
  auto-fill-mode
- indent-region
- package-install
- load-library
 )
 
 ;; ----- smex-data -----
 (
  (irc . 1)
- (package-install . 30)
+ (package-install . 32)
  (ecb-activate . 6)
  (set-frame-font . 1)
  (load-theme . 2)
  (untabify . 2)
- (load-library . 7)
+ (load-library . 8)
  (jade-mode . 4)
  (set-variable . 6)
  (semantic-show-parser-state-mode . 1)
@@ -43,4 +43,5 @@
  (auto-fill-mode . 1)
  (paredit-mode . 1)
  (version . 1)
+ (line-number-mode . 3)
 )

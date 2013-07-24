@@ -61,12 +61,23 @@
 (require 'color-theme-solarized)
 (color-theme-solarized-dark)
 
+;; Tramp
+(require 'tramp)
+(setq tramp-auto-save-directory "C:\\MSDE\\honglinz\\tmp")
+(setq tramp-default-method "plink")
+
 ;; smooth scrolling
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
 ;; delete when typing
 (delete-selection-mode 1)
+
+;;(require 'solarized-theme)
+;;(solarized-dark-theme)
+(if (display-graphic-p)
+    (load-theme 'bubbleberry t))
+
 
 ;; ecb
 (setq stack-trace-on-error nil)
@@ -100,7 +111,7 @@
 
 ;; Python stuff
 (add-hook 'python-mode-hook '(lambda () 
-                               (setq python-indent-offset 2))
+                               (setq python-indent-offset 2)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
