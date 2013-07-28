@@ -1,25 +1,47 @@
 
 ;; ----- smex-history -----
 (
- package-install
+ line-number-mode
  load-library
- set-variable
- untabify
- load-theme
- irc
- set-frame-font
+ package-install
+ version
+ set-default-font
+ paredit-mode
+ auto-fill-mode
 )
 
 ;; ----- smex-data -----
 (
  (irc . 1)
- (package-install . 19)
- (ecb-activate . 2)
+ (package-install . 32)
+ (ecb-activate . 6)
  (set-frame-font . 1)
  (load-theme . 2)
  (untabify . 2)
- (load-library . 2)
+ (load-library . 8)
  (jade-mode . 4)
- (set-variable . 1)
+ (set-variable . 6)
  (semantic-show-parser-state-mode . 1)
+ (ecb-deactivate . 2)
+ (menu-bar-mode . 3)
+ (markdown-mode . 2)
+ (fsharp-mode . 1)
+ (fsharp-show-subshell . 1)
+ (inferior-fsharp-eval-region . 1)
+ (org-require-autoloaded-modules . 1)
+ (goto-line . 1)
+ (color-theme-select . 4)
+ (load-file . 1)
+ (color-theme-heroku . 1)
+ (set-default-font . 2)
+ (color-theme-solarized . 2)
+ (global-linum-mode . 1)
+ (comment-region . 1)
+ (eshell . 1)
+ (make-directory . 1)
+ (indent-region . 2)
+ (auto-fill-mode . 1)
+ (paredit-mode . 1)
+ (version . 1)
+ (line-number-mode . 3)
 )
