@@ -4,6 +4,13 @@
 (tool-bar-mode 0)
 (setq inhibit-statrtup-message t)
 (setq initial-scratch-message nil)
+(setq ring-bell-function 'ignore)
+
+;; indentation
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; line number
+;; (global-linum-mode 1)
 
 ;; space
 (setq-default tab-width 2)
@@ -12,21 +19,18 @@
 ;; no backup
 (setq backup-enable-predicate
       (lambda (name) nil))
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; encoding
 (prefer-coding-system 'utf-8)
 
 ;; theme
 (if (eq system-type 'darwin)
-	(set-default-font "Monaco-10")
+    (set-default-font "Inconsolata-15")
   (set-default-font "Inconsolata-10.5"))
-;;  (set-default-font "Ubuntu Mono-12"))
-;;	(set-default-font "Consolas-11"))
 (setq-default line-spacing 2)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-
-;;(if (display-graphic-p)
-;;    (load-theme 'bubbleberry t))
 
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -34,15 +38,6 @@
 ;;(require 'cl)
 ;;(require 'powerline)
 
-;; indentation
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; line number
-(global-linum-mode 1)
-
-;; Stop backing up
-(setq make-backup-files nil)
-(setq auto-save-default nil)
 
 ;; proxy
 ;; (setq url-using-proxy t)
@@ -72,12 +67,6 @@
 
 ;; delete when typing
 (delete-selection-mode 1)
-
-;;(require 'solarized-theme)
-;;(solarized-dark-theme)
-(if (display-graphic-p)
-    (load-theme 'bubbleberry t))
-
 
 ;; ecb
 (setq stack-trace-on-error nil)
