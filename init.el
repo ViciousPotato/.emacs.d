@@ -17,7 +17,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; theme
-(set-default-font "Monaco-10")
+(set-default-font "Inconsolata-15")
 (setq-default line-spacing 3)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'bubbleberry t)
@@ -43,7 +43,7 @@
 (setq stack-trace-on-error nil)
 (setq ecb-tip-of-the-day nil)
 (require 'ecb)
-(ecb-activate)
+;;(ecb-activate)
 
 ;; Language modes
 ;; Jade mode
