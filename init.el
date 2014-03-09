@@ -25,6 +25,7 @@
 ;; encoding
 (prefer-coding-system 'utf-8)
 
+(set-default-font "Monaco-13")
 ;; theme
 (if (eq system-type 'darwin)
     (set-default-font "Inconsolata-15")
@@ -101,6 +102,9 @@
 ;; Python stuff
 (add-hook 'python-mode-hook '(lambda () 
                                (setq python-indent-offset 2)))
+;; Set PATH, MANPATH for OS X
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
