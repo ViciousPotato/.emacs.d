@@ -25,11 +25,12 @@
 ;; encoding
 (prefer-coding-system 'utf-8)
 
-(set-default-font "Monaco-13")
 ;; theme
 (if (eq system-type 'darwin)
     (set-default-font "Inconsolata-15")
-  (set-default-font "Inconsolata-10.5"))
+    (if (eq system-type 'gnu/linux)
+        (set-default-font "Ubuntu Mono-12")
+      (set-default-font "Inconsolata-10.5")))
 (setq-default line-spacing 2)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
@@ -50,7 +51,7 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives 
              '("melpa" . "http://melpa.milkbox.net/packages/"))
-(unless package-archive-contents (package-refresh-contents))
+;; (unless package-archive-contents (package-refresh-contents))
 (package-initialize)
 
 (require 'color-theme)
