@@ -1,7 +1,6 @@
-;; make it cleaner
+;; make UI cleaner
 (when (functionp 'tool-bar-mode)
 	(tool-bar-mode -1))
-(tool-bar-mode 0)
 (setq inhibit-statrtup-message t)
 (setq initial-scratch-message nil)
 (setq ring-bell-function 'ignore)
@@ -10,7 +9,7 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; line number
-;; (global-linum-mode 1)
+(global-linum-mode 1)
 
 ;; space
 (setq-default tab-width 2)
@@ -25,7 +24,7 @@
 ;; encoding
 (prefer-coding-system 'utf-8)
 
-;; theme
+;; font & theme
 (if (eq system-type 'darwin)
     (set-default-font "Inconsolata-15")
     (if (eq system-type 'gnu/linux)
@@ -39,7 +38,6 @@
 ;; Needed by powerline
 ;;(require 'cl)
 ;;(require 'powerline)
-
 
 ;; proxy
 ;; (setq url-using-proxy t)
@@ -104,9 +102,8 @@
                                (setq python-indent-offset 2)))
 
 ;; OCaml
-(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
-(setq auto-mode-alist
-      (append '(("\\.ml[ily]?$" . tuareg-mode)
+ (setq auto-mode-alist
+       (append '(("\\.ml[ily]?$" . tuareg-mode)
                 ("\\.topml$" . tuareg-mode))
               auto-mode-alist)) 
 (autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
@@ -132,8 +129,8 @@
   (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
 (set-face-background 'merlin-type-face "#88FF44")
 
-;; -- enable auto-complete -------------------------------
-;; Not required, but useful along with merlin-mode
+;;-- enable auto-complete -------------------------------
+;;Not required, but useful along with merlin-mode
 (require 'auto-complete)
 (add-hook 'tuareg-mode-hook 'auto-complete-mode)
 
